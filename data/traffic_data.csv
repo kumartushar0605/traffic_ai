@@ -1,0 +1,33 @@
+route_id,start_point,destination,road_name,distance_km,historical_avg_time_min,recent_congestion_min,live_update_time_min,complexity_score,image_url
+1,Bhubaneswar,Puri,Badshahi Rd / Bhubaneswar–Puri Hwy,65,75,15,70,0.5,https://curlytales.com/wp-content/uploads/2023/04/expressway-1-1.jpg
+2,Bhubaneswar,Puri,NH16,85,100,20,90,0.6,https://upload.wikimedia.org/wikipedia/commons/5/58/National_Highway_16_India.jpg
+3,Bhubaneswar,Konark,Puri-Konark Marine Drive,84.5,95,10,90,0.4,https://upload.wikimedia.org/wikipedia/commons/8/87/Konark_Marine_Drive.jpg
+4,Bhubaneswar,Cuttack,Nandankanan Rd–Naraj–Trisulia Bridge,11.8,23,5,20,0.3,https://upload.wikimedia.org/wikipedia/commons/d/d7/Trisulia_Bridge_Cuttack.jpg
+5,Bhubaneswar,Banki,Bhubaneswar–Banki Rd,53.1,93,10,85,0.5,https://upload.wikimedia.org/wikipedia/commons/7/71/Banki_Road.jpg
+6,Cuttack,Chandikhol,NH16,45,60,10,55,0.4,https://upload.wikimedia.org/wikipedia/commons/5/58/National_Highway_16_India.jpg
+7,Cuttack,Paradeep,Cuttack–Paradeep Rd,85,110,15,100,0.6,https://upload.wikimedia.org/wikipedia/commons/a/a3/Paradip_Highway.jpg
+8,Puri,Satapada,Puri–Satapada Rd,50,70,10,65,0.4,https://upload.wikimedia.org/wikipedia/commons/1/1e/Puri-Satapada_Road.jpg
+9,Puri,Brahmagiri,Puri–Brahmagiri Rd,25,40,5,35,0.3,https://upload.wikimedia.org/wikipedia/commons/9/94/Brahmagiri_Road.jpg
+10,Bhubaneswar,Jajpur,NH16,100,130,20,120,0.5,https://upload.wikimedia.org/wikipedia/commons/5/58/National_Highway_16_India.jpg
+11,Bhubaneswar,Balasore,NH16,200,240,30,220,0.6,https://upload.wikimedia.org/wikipedia/commons/5/58/National_Highway_16_India.jpg
+12,Bhubaneswar,Berhampur,NH16,180,210,25,200,0.5,https://upload.wikimedia.org/wikipedia/commons/5/58/National_Highway_16_India.jpg
+13,Bhubaneswar,Sambalpur,NH55,300,360,40,340,0.7,https://upload.wikimedia.org/wikipedia/commons/2/25/NH_55_Sambalpur.jpg
+14,Bhubaneswar,Rourkela,NH16 and NH143,340,420,50,400,0.8,https://upload.wikimedia.org/wikipedia/commons/3/39/NH_143_Rourkela.jpg
+15,Bhubaneswar,Angul,NH55,160,190,20,180,0.5,https://upload.wikimedia.org/wikipedia/commons/2/25/NH_55_Sambalpur.jpg
+16,Bhubaneswar,Dhenkanal,NH55,70,90,10,85,0.4,https://upload.wikimedia.org/wikipedia/commons/2/25/NH_55_Sambalpur.jpg
+17,Bhubaneswar,Khurda,NH16,30,40,5,35,0.3,https://upload.wikimedia.org/wikipedia/commons/5/58/National_Highway_16_India.jpg
+18,Bhubaneswar,Nayagarh,NH57,90,110,15,100,0.5,https://upload.wikimedia.org/wikipedia/commons/8/8d/NH57_Nayagarh.jpg
+19,Bhubaneswar,Gopalpur,NH16 and Gopalpur–Chhatrapur Rd,170,200,25,190,0.5,https://upload.wikimedia.org/wikipedia/commons/c/cd/Gopalpur_Highway.jpg
+20,Bhubaneswar,Chilika,NH16 and Barkul Rd,100,120,15,110,0.4,https://upload.wikimedia.org/wikipedia/commons/2/2c/Chilika_Road.jpg
+21,Bhubaneswar,Jeypore,NH16 and NH26,520,600,70,580,0.8,https://upload.wikimedia.org/wikipedia/commons/d/dc/NH_26_Odisha.jpg
+22,Bhubaneswar,Koraput,NH16 and NH26,530,610,75,590,0.8,https://upload.wikimedia.org/wikipedia/commons/d/dc/NH_26_Odisha.jpg
+23,Bhubaneswar,Rayagada,NH16 and NH326,400,480,60,460,0.7,https://upload.wikimedia.org/wikipedia/commons/9/9f/NH_326_Rayagada.jpg
+24,Bhubaneswar,Phulbani,NH16 and NH57,200,240,30,220,0.6,https://upload.wikimedia.org/wikipedia/commons/8/8d/NH57_Nayagarh.jpg
+25,Bhubaneswar,Balangir,NH57,320,380,45,360,0.7,https://upload.wikimedia.org/wikipedia/commons/8/8d/NH57_Nayagarh.jpg
+26,Bhubaneswar,Bargarh,NH55 and NH53,350,420,50,400,0.7,https://upload.wikimedia.org/wikipedia/commons/3/3d/NH_53_Bargarh.jpg
+27,Bhubaneswar,Jharsuguda,NH55 and NH49,370,440,55,420,0.7,https://upload.wikimedia.org/wikipedia/commons/e/e5/NH_49_Jharsuguda.jpg
+28,Bhubaneswar,Sundargarh,NH55 and NH143,450,540,65,520,0.8,https://upload.wikimedia.org/wikipedia/commons/3/39/NH_143_Rourkela.jpg
+29,Bhubaneswar,Kendrapara,NH16 and Kendrapara Rd,90,110,15,100,0.4,https://upload.wikimedia.org/wikipedia/commons/2/26/Kendrapara_Highway.jpg
+30,Bhubaneswar,Jagatsinghpur,NH16 and Jagatsinghpur Rd,70,90,10,85,0.4,https://upload.wikimedia.org/wikipedia/commons/f/fa/Jagatsinghpur_Highway.jpg
+31,Bhubaneswar,Bhadrak,NH16,130,160,20,150,0.5,https://upload.wikimedia.org/wikipedia/commons/5/58/National_Highway_16_India.jpg
+32,Bhubaneswar,Baripada,NH18,270,320,40,300,0.6,https://upload.wikimedia.org/wikipedia/commons/b/bd/NH18_Baripada.jpg
