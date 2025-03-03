@@ -16,11 +16,9 @@ class TrafficModel:
             if routes.empty:
                 logger.warning(f"No routes found for {start_point} to {destination}")
                 return None
-            
-            grouped_routes = {}
+
+            route_options = []
             for _, route in routes.iterrows():
-                group_id = route.get('group_id', None)
-                
                 # Split petrol pumps and their coordinates
                 petrol_pumps = route['petrolpump'].split(', ') if 'petrolpump' in route else []
                 petrol_coords = route['petrolpump_coordinates'].split('; ') if 'petrolpump_coordinates' in route else []
@@ -34,6 +32,7 @@ class TrafficModel:
                 # Split road coordinates into a list of coordinate pairs
                 road_coords = route['road_coordinates'].split('; ') if 'road_coordinates' in route else []
 
+                # Build route information dictionary
                 route_info = {
                     'road_name': route['road_name'],
                     'distance_km': float(route['distance_km']) if route['distance_km'] else 0.0,
@@ -47,19 +46,17 @@ class TrafficModel:
                     'hotels': hotel_info,
                     'road_coordinates': road_coords
                 }
-                
-                if group_id not in grouped_routes:
-                    grouped_routes[group_id] = []
-                grouped_routes[group_id].append(route_info)
-            
-            # Sort each group by future time and mark the best route
-            for group_id, routes in grouped_routes.items():
-                best_future_route = min(routes, key=lambda x: x['future_time_min'])
+
+                route_options.append(route_info)
+
+            # Sort routes by future time and mark the best route
+            if route_options:
+                best_future_route = min(route_options, key=lambda x: x['future_time_min'])
                 best_future_route['future_recommendation'] += " (Best option after 2 hours)"
-            
-            logger.info(f"Generated {len(grouped_routes)} route groups for {start_point} to {destination}")
-            return grouped_routes
-        
+
+            logger.info(f"Generated {len(route_options)} route options for {start_point} to {destination}")
+            return route_options
+
         except Exception as e:
             logger.error(f"Error predicting routes: {e}")
             raise
