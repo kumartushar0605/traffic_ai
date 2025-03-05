@@ -29,12 +29,10 @@ class TrafficModel:
                 hotel_coords = route['hotel_coordinates'].split('; ') if 'hotel_coordinates' in route else []
                 hotel_info = {hotel.strip(): coord.strip() for hotel, coord in zip(hotels, hotel_coords)}
 
-                # Split road coordinates into a list of coordinate pairs
-                road_coords = route['road_coordinates'].split('; ') if 'road_coordinates' in route else []
-
                 # Build route information dictionary
                 route_info = {
                     'road_name': route['road_name'],
+                    'road_cls': route['route_cls'],
                     'distance_km': float(route['distance_km']) if route['distance_km'] else 0.0,
                     'predicted_time_min': self.processor.calculate_predicted_time(route),
                     'future_time_min': self.processor.calculate_future_time(route, hours_later=2),
@@ -44,7 +42,7 @@ class TrafficModel:
                     'image_url': route.get('image_url', 'https://via.placeholder.com/150'),
                     'petrol_pumps': petrol_pump_info,
                     'hotels': hotel_info,
-                    'road_coordinates': road_coords
+                    
                 }
 
                 route_options.append(route_info)
