@@ -32,7 +32,9 @@ class TrafficModel:
                 # Build route information dictionary
                 route_info = {
                     'road_name': route['road_name'],
-                    'road_cls': route['route_cls'],
+                  
+'road_cls': str(route['route_cls']),
+
                     'distance_km': float(route['distance_km']) if route['distance_km'] else 0.0,
                     'predicted_time_min': self.processor.calculate_predicted_time(route),
                     'future_time_min': self.processor.calculate_future_time(route, hours_later=2),
