@@ -5,6 +5,13 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+def convert_time(minutes):
+    """Convert time in minutes to hours and minutes format, with minutes in decimal (1 decimal place)."""
+    hours = minutes // 60
+    mins = (minutes % 60) / 60  # Convert remaining minutes to decimal
+    return f"{hours + round(mins, 1)} hrs" if hours > 0 else f"{round(mins * 60, 1)} min"
+
+
 class TrafficModel:
     def __init__(self, data_path):
         logger.info(f"Initializing TrafficModel with data from {data_path}")
@@ -29,8 +36,6 @@ class TrafficModel:
                 hotel_coords = route['hotel_coordinates'].split('; ') if 'hotel_coordinates' in route else []
                 hotel_info = {hotel.strip(): coord.strip() for hotel, coord in zip(hotels, hotel_coords)}
 
-                
-
                 predicted_time = self.processor.calculate_predicted_time(route)
                 future_time = self.processor.calculate_future_time(route, hours_later=2)
                 co2_emissions = self.co2_estimator.estimate_emissions(route['distance_km'], route['recent_congestion_min'])
@@ -39,11 +44,11 @@ class TrafficModel:
                     'road_name': route['road_name'],
                     'road_cls': str(route['route_cls']),
                     'distance_km': float(route['distance_km']) if route['distance_km'] else 0.0,
-                    'predicted_time_min': predicted_time,
-                    'future_time_min': future_time,
+                    'predicted_time': convert_time(predicted_time),
+                    'future_time': convert_time(future_time),
                     'complexity_score': route['complexity_score'],
                     'recommendation': 'Good within 15 min' if predicted_time <= 15 else 'Not ideal now',
-                    'future_recommendation': f"After 2 hours: {future_time} min",
+                    'future_recommendation': f"After 2 hours: {convert_time(future_time)}",
                     'co2_emissions_kg': round(co2_emissions, 2),
                     'no_of_tolls': str(route['no_of_tolls']),
                     'cost_of_each_tolls': str(route['cost_of_each_tolls']),
@@ -58,8 +63,8 @@ class TrafficModel:
             if route_options:
                 # Find route with minimum CO2 emissions
                 best_co2_route = min(route_options, key=lambda x: x['co2_emissions_kg'])
-                best_future_route = min(route_options, key=lambda x: x['future_time_min'])
-                
+                best_future_route = min(route_options, key=lambda x: x['future_time'])
+
                 # Add CO2 comparison message to each route
                 for route in route_options:
                     if route['co2_emissions_kg'] == best_co2_route['co2_emissions_kg']:
