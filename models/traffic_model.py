@@ -29,6 +29,8 @@ class TrafficModel:
                 hotel_coords = route['hotel_coordinates'].split('; ') if 'hotel_coordinates' in route else []
                 hotel_info = {hotel.strip(): coord.strip() for hotel, coord in zip(hotels, hotel_coords)}
 
+                
+
                 predicted_time = self.processor.calculate_predicted_time(route)
                 future_time = self.processor.calculate_future_time(route, hours_later=2)
                 co2_emissions = self.co2_estimator.estimate_emissions(route['distance_km'], route['recent_congestion_min'])
@@ -43,6 +45,9 @@ class TrafficModel:
                     'recommendation': 'Good within 15 min' if predicted_time <= 15 else 'Not ideal now',
                     'future_recommendation': f"After 2 hours: {future_time} min",
                     'co2_emissions_kg': round(co2_emissions, 2),
+                    'no_of_tolls': str(route['no_of_tolls']),
+                    'cost_of_each_tolls': str(route['cost_of_each_tolls']),
+                    'sum_of_cost_of_each_tolls': str(route['sum_of_cost_of_each_tolls']),
                     'image_url': route.get('image_url', 'https://via.placeholder.com/150'),
                     'petrol_pumps': petrol_pump_info,
                     'hotels': hotel_info,
