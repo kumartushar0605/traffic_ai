@@ -3,9 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from models.traffic_model import TrafficModel
 from pydantic import BaseModel
 import os
-print("Current directory:", os.getcwd())
-print("File exists:", os.path.exists("data/traffic_data.csv"))
-
 
 app = FastAPI(title="AI-Powered Traffic Prediction System")
 
