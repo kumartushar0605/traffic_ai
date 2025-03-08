@@ -48,7 +48,7 @@ class TrafficModel:
                     'future_time': convert_time(future_time),
                     'complexity_score': route['complexity_score'],
                     'recommendation': 'Good within 15 min' if predicted_time <= 15 else 'Not ideal now',
-                    'future_recommendation': f"After 2 hours: {convert_time(future_time)}",
+                    'future_recommendation': f"After 2 hours it will take  {convert_time(future_time)}",
                     'co2_emissions_kg': round(co2_emissions, 2),
                     'no_of_tolls': str(route['no_of_tolls']),
                     'cost_of_each_tolls': str(route['cost_of_each_tolls']),
