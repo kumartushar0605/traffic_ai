@@ -14,7 +14,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DATA_PATH = os.getenv("TRAFFIC_DATA_PATH", "data/traffic_data.csv")
+DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "traffic_data.csv")
 
 try:
     model = TrafficModel(DATA_PATH)
